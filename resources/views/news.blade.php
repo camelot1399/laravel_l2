@@ -20,9 +20,9 @@
     <h1>news</h1>
 
     <ul>
-        <li>Новость 1</li>
-        <li>Новость 2</li>
-        <li>Новость 3</li>
+        <li><a href="/newsId/1">Новость 1</a></li>
+        <li><a href="/newsId/2">Новость 2</a></li>
+        <li><a href="/newsId/3">Новость 3</a></li>
     </ul>
 </body>
 </html>
