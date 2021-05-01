@@ -14,7 +14,7 @@ class NewsController extends Controller
     }
     public function index()
     {
-        return view('news');
+        return view('News/news');
     }
 
     public function newsId()
