@@ -14,11 +14,11 @@ class NewsController extends Controller
     }
     public function index()
     {
-        return view('News/news');
+        return view('news.index');
     }
 
-    public function newsId()
+    public function show(News $news)
     {
-        return view('News/newsId', ['id' => $this->id]);
+        return view('news.show', compact('news'));
     }
 }

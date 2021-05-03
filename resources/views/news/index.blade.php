@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About</title>
+    <title>News</title>
 </head>
 <body>
     <header>
@@ -18,7 +18,12 @@
             </ul>
         </nav>
     </header>
-    <h1>About</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam autem corporis eum excepturi fugiat, hic illo in, iusto magni mollitia nostrum nulla perspiciatis praesentium, quam tempore veniam voluptas voluptatem.</p>
+    <h1>news</h1>
+
+    <ul>
+        <li><a href="/news/1">Новость 1</a></li>
+        <li><a href="/news/2">Новость 2</a></li>
+        <li><a href="/news/3">Новость 3</a></li>
+    </ul>
 </body>
 </html>
