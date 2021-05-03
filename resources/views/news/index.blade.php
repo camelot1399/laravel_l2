@@ -21,9 +21,9 @@
     <h1>news</h1>
 
     <ul>
-        <li><a href="/news/1">Новость 1</a></li>
-        <li><a href="/news/2">Новость 2</a></li>
-        <li><a href="/news/3">Новость 3</a></li>
+        @foreach($news as $newsItem)
+            <li><a href="{{ route('news.show', ['news' => $newsItem]) }}">{{ $newsItem }}}</a></li>
+        @endforeach
     </ul>
 </body>
 </html>
