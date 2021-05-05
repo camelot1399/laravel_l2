@@ -1,6 +1,8 @@
 <x-app-layout>
 
-    <h1>add new news</h1>
+    <x-slot name="header">
+        <h1>add new news</h1>
+    </x-slot>
 
     <form action="#">
 

@@ -1,6 +1,8 @@
 <x-app-layout>
 
-    <h1>Auth</h1>
+    <x-slot name="header">
+        <h1>Auth</h1>
+    </x-slot>
 
     <form action="/adm">
         <label for="login">

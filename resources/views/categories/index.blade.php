@@ -1,6 +1,8 @@
 <x-app-layout>
 
-    <h1>Category</h1>
+    <x-slot name="header">
+        <h1>Category</h1>
+    </x-slot>
 
     <ul>
         @foreach($category as $categoryItem)
