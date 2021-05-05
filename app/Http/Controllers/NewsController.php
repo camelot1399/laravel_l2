@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    private $id;
 
-    public function __construct()
-    {
-        $this->id = 3;
-    }
     public function index()
     {
-        $news = News::all();
+        $news = News::with('category')->get();
         return view('news.index', compact('news'));
     }
 
@@ -23,4 +19,11 @@ class NewsController extends Controller
     {
         return view('news.show', compact('news'));
     }
+
+    public function categoryNews(Category $category)
+    {
+        $news = News::where('category_id', $category->id)->get();
+        return view('news.index', compact('news'));
+    }
+
 }

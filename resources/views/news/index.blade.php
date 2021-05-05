@@ -6,24 +6,35 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>News</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+    <header class="wrapper">
+        <a href="/">Logo</a>
+
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/category">Categories</a></li>
+            <ul class="navHeader__ul">
+                <li class="navHeader__li"><a class="navHeader__a" href="/">Home</a></li>
+                <li class="navHeader__li"><a class="navHeader__a" href="/about">About</a></li>
+                <li class="navHeader__li"><a class="navHeader__a" href="/news">News</a></li>
+                <li class="navHeader__li"><a class="navHeader__a" href="/categories">Categories list</a></li>
+                <li class="navHeader__li"><a class="navHeader__a" href="/auth">Auth</a></li>
+                <li class="navHeader__li"><a class="navHeader__a" href="/adm">Adminka</a></li>
             </ul>
         </nav>
     </header>
-    <h1>news</h1>
 
-    <ul>
-        @foreach($news as $newsItem)
-            <li><a href="{{ route('news.show', ['news' => $newsItem]) }}">{{ $newsItem }}}</a></li>
-        @endforeach
-    </ul>
+    <main class="wrapper">
+        <h1>news</h1>
+        <ul>
+            @foreach($news as $newsItem)
+                <li><a href="{{ route('news.show', ['news' => $newsItem]) }}">({{ $newsItem->category->name }}) {{ $newsItem->title }}}</a></li>
+            @endforeach
+        </ul>
+    </main>
+
+    <footer>
+        footer
+    </footer>
 </body>
 </html>
