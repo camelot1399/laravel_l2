@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Auth</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,9 +25,26 @@
     </header>
 
     <main class="wrapper">
-        <h1>Hello</h1>
+        <h1>Auth</h1>
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam culpa debitis iusto? Est recusandae dolorum dolores rerum officiis harum excepturi eum architecto, similique, ratione quaerat libero in maxime ex provident.</p>
+        <form action="/adm">
+            <label for="login">
+                Login:
+                <input type="text" name="login" placeholder="login" id="login" required>
+            </label>
+            <br>
+            <label for="password">
+                Password:
+                <input type="password" name="password" placeholder="password" id="password" required>
+            </label>
+            <br>
+            <label for="saveMe">
+                Запомнить меня:
+                <input type="checkbox" name="saveMe" id="saveMe">
+            </label>
+            <br>
+            <button type="submit">Войти</button>
+        </form>
     </main>
 
     <footer class="wrapper">

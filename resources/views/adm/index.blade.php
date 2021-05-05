@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Adminka</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,13 +25,54 @@
     </header>
 
     <main class="wrapper">
-        <h1>Hello</h1>
+        <h1>add new news</h1>
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam culpa debitis iusto? Est recusandae dolorum dolores rerum officiis harum excepturi eum architecto, similique, ratione quaerat libero in maxime ex provident.</p>
+        <form action="#">
+
+            <label for="name">
+                Name:
+                <br>
+                <input type="text" id="name" placeholder="name">
+            </label>
+
+            <br>
+            <br>
+
+            <label for="category">
+                Category:
+                <br>
+                <input type="text" id="category" name="category" placeholder="category">
+            </label>
+
+            <br>
+            <br>
+
+            <label for="briefDescription">
+                Brief Description:
+                <br>
+                <input type="text" id="briefDescription" name="briefDescription" placeholder="briefDescription">
+            </label>
+
+            <br>
+            <br>
+
+            <label for="description">
+                Description:
+                <br>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            </label>
+
+            <br>
+            <br>
+
+            <button type="submit">Send</button>
+
+        </form>
     </main>
 
     <footer class="wrapper">
         footer
     </footer>
+
 </body>
 </html>

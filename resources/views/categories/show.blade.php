@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>categories</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,13 +25,14 @@
     </header>
 
     <main class="wrapper">
-        <h1>Hello</h1>
+        <h1>categories</h1>
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam culpa debitis iusto? Est recusandae dolorum dolores rerum officiis harum excepturi eum architecto, similique, ratione quaerat libero in maxime ex provident.</p>
+        {{ dd($category) }}
     </main>
 
     <footer class="wrapper">
         footer
     </footer>
+
 </body>
 </html>
