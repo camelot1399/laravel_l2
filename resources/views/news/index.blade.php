@@ -33,7 +33,7 @@
         </ul>
     </main>
 
-    <footer>
+    <footer class="wrapper">
         footer
     </footer>
 </body>
