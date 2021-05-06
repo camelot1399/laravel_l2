@@ -25,12 +25,12 @@
             </nav>
 
             <!-- Page Heading -->
-            <header class="pt-5 pb-5 pl-20 pr-20 ">
+            <header class="pt-5 pb-5 pl-20 pr-20 bg-white text-5xl">
                {{ $header }}
             </header>
 
             <!-- Page Content -->
-            <main class="pl-20 pr-20">
+            <main class="pl-20 pr-20 bg-white shadow pt-10 pb-10">
                 {{ $slot }}
             </main>
 

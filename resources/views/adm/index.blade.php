@@ -4,7 +4,7 @@
         <h1>add new news</h1>
     </x-slot>
 
-    <form action="#">
+    <form action="#" class="pt-10 pb-10">
 
         <label for="name">
             Name:
@@ -42,7 +42,7 @@
         <br>
         <br>
 
-        <button type="submit">Send</button>
+        <button type="submit" class="border-2 p-2">Send</button>
 
     </form>
 
