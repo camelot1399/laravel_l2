@@ -5,6 +5,6 @@
         <li class="navHeader__li ml-5"><a class="navHeader__a" href="/news">News</a></li>
         <li class="navHeader__li ml-5"><a class="navHeader__a" href="/categories">Categories list</a></li>
         <li class="navHeader__li ml-5"><a class="navHeader__a" href="/auth">Auth</a></li>
-        <li class="navHeader__li ml-5"><a class="navHeader__a" href="/adm">Adminka</a></li>
+        <li class="navHeader__li ml-5"><a class="navHeader__a" href="/dashboard">Dashboard</a></li>
     </ul>
 </nav>
