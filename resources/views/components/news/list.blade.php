@@ -2,7 +2,7 @@
     <a href="{{ route('news.show', ['news' => $newsItem]) }}">
 
         <div class="font-bold">
-            {{ $newsItem->title }}}
+            {{ $newsItem->title }}
         </div>
 
         <div class="flex font-small mt-5">

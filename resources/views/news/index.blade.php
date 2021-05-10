@@ -2,6 +2,7 @@
 
     <x-slot name="header">
         <h1>news</h1>
+        <a href="{{ route('news.create') }}">Create</a>
     </x-slot>
 
     <div class="flex flex-wrap justify-between -ms-3">
