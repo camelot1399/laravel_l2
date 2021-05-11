@@ -5,6 +5,9 @@
         <a href="{{ route('news.create') }}">Create</a>
     </x-slot>
 
+    @if(session()->has('success'))
+        <div class="m-4 color-red">{{ session()->get('success') }}</div>
+    @endif
     <div class="flex flex-wrap justify-between -ms-3">
         @forelse($news as $newsItem)
             <div class="w-full md:w-1/3 lg:w-1/4 px-3">

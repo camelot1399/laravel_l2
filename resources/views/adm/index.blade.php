@@ -18,7 +18,12 @@
         <label for="category">
             Category:
             <br>
-            <input type="text" id="category" name="category" placeholder="category">
+            <select name="category" id="category">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+
         </label>
 
         <br>

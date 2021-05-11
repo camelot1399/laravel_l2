@@ -19,6 +19,11 @@ class NewsController extends Controller
 
     public function show(News $news)
     {
+//        return response()->json(['1' => '2']);
+//        return response()->file();
+//        return response()
+//            ->view('news.show', compact('news'))
+//            ->header('x-app-type', 'news-page');
         return view('news.show', compact('news'));
     }
 
@@ -49,7 +54,7 @@ class NewsController extends Controller
 
         News::create($request->validated());
 
-        return redirect()->route('news.index');
+        return redirect()->route('news.index')->with('success', 'Новость успешно доабвлена');
     }
 
 }
