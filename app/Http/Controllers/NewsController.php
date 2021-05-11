@@ -51,10 +51,9 @@ class NewsController extends Controller
 //        dump($request->validated());
 //
 //        dd(1);
-
         News::create($request->validated());
 
-        return redirect()->route('news.index')->with('success', 'Новость успешно доабвлена');
+        return redirect()->route('news.index')->with('success', 'Новость успешно добавлена');
     }
 
 }

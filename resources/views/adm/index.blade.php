@@ -4,35 +4,30 @@
         <h1>add new news</h1>
     </x-slot>
 
-    <form action="#" class="pt-10 pb-10">
+    <div class="my-8">
+        <x-auth-validation-errors :errors="$errors" />
+    </div>
 
-        <label for="name">
-            Name:
+    <form method="POST" action="{{ route('adm.create') }}">
+        @csrf
+        <label for="title">
+            Title:
             <br>
-            <input type="text" id="name" placeholder="name">
+            <input type="text" id="title" placeholder="title" name="title">
         </label>
 
         <br>
         <br>
 
-        <label for="category">
+        <label for="category_id">
             Category:
             <br>
-            <select name="category" id="category">
+            <select name="category_id" id="category_id">
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
             </select>
 
-        </label>
-
-        <br>
-        <br>
-
-        <label for="briefDescription">
-            Brief Description:
-            <br>
-            <input type="text" id="briefDescription" name="briefDescription" placeholder="briefDescription">
         </label>
 
         <br>

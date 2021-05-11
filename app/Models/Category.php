@@ -28,6 +28,10 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name'
+    ];
+
     public function news()
     {
         return $this->hasMany(News::class);
