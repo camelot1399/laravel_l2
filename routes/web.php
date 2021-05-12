@@ -33,4 +33,7 @@ Route::post('/adm/create', [\App\Http\Controllers\AdmController::class, 'store']
 
 Route::get('/feedback', [\App\Http\Controllers\FeedbackController::class, 'index'])->name('feedback.index');
 Route::post('/feedback', [\App\Http\Controllers\FeedbackController::class, 'store'])->name('feedback.store');
+
+Route::get('/zakaz/create', [\App\Http\Controllers\ZakazController::class, 'create'])->name('zakaz.create');
+Route::post('/zakaz/create', [\App\Http\Controllers\ZakazController::class, 'store'])->name('zakaz.store');
 require __DIR__.'/auth.php';
