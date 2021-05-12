@@ -8,6 +8,10 @@
         <div class="m-4 color-red">{{ session()->get('success') }}</div>
     @endif
 
+    <div class="my-8">
+        <x-auth-validation-errors :errors="$errors" />
+    </div>
+
     <x-feedback.feedback />
 
 

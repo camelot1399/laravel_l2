@@ -28,7 +28,7 @@ class CreateNewsTest extends TestCase
             'category_id' => $category->id
         ];
 
-        $response = $this->post('/news/create', $$newsData);
+        $response = $this->post('/news/create', $newsData);
 
         $response->assertStatus(302);
         $response->assertSessionHasNoErrors();

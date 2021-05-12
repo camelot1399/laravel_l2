@@ -25,8 +25,8 @@ class StoreZakazRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:100'],
-            'phone' => ['required'],
-            'email' => ['required', 'string', 'max:100'],
+            'phone' => ['required', 'int'],
+            'email' => ['required', 'string', 'max:50'],
             'description' => ['required', 'string', 'max:300'],
         ];
     }

@@ -8,7 +8,11 @@
         <div class="m-4 color-red">{{ session()->get('success') }}</div>
     @endif
 
-    <form method="POST" action="{{ route('zakaz.store') }}" enctype="multipart/form-data">
+    <div class="my-8">
+        <x-auth-validation-errors :errors="$errors" />
+    </div>
+
+    <form method="POST" action="{{ route('zakaz.store') }}">
         @csrf
 
         <div>
@@ -20,13 +24,13 @@
         <div>
             <x-label for="phone" :value="__('Phone')" />
 
-            <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autofocus />
+            <x-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')" required placeholer="89165555555" />
         </div>
 
         <div>
             <x-label for="email" :value="__('Email')" />
 
-            <x-input id="email" class="block mt-1 w-full" type="text" name="email" :value="old('email')" required autofocus />
+            <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
         </div>
 
         <div class="mt-4">
@@ -34,7 +38,6 @@
 
             <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autofocus />
         </div>
-
 
 
         <div class="flex mt-4">
