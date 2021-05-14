@@ -35,14 +35,14 @@ class OrderController extends Controller
 
 //        $results = DB::insert('INSERT INTO order (name) values (:name)', $data);
 
-        $data = [
-            'name' => $request->get('name'),
-            'phone' => $request->get('phone'),
-            'email' => $request->get('email'),
-            'description' => $request->get('description'),
-        ];
+//        $data = [
+//            'name' => $request->get('name'),
+//            'phone' => $request->get('phone'),
+//            'email' => $request->get('email'),
+//            'description' => $request->get('description'),
+//        ];
 
-        Order::create($data);
+        Order::create($request->validated());
 
         return redirect()->route('order.create')->with('success', 'Заказ успешно отправлен!');
     }
