@@ -12,7 +12,7 @@
         <x-auth-validation-errors :errors="$errors" />
     </div>
 
-    <form method="POST" action="{{ route('zakaz.store') }}">
+    <form method="POST" action="{{ route('order.store') }}">
         @csrf
 
         <div>

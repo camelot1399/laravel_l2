@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class CreateZakaz extends TestCase
+class CreateOrder extends TestCase
 {
     /**
      * A basic feature test example.
@@ -26,7 +26,7 @@ class CreateZakaz extends TestCase
             'description' => 'sddfdsfsdffsdgs sdfsdf sdfdsf'
         ];
 
-        $response = $this->post('/zakaz/create', $newsData);
+        $response = $this->post('/order/create', $newsData);
 
         $response->assertStatus(302);
         $response->assertSessionHasNoErrors();
