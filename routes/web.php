@@ -20,8 +20,6 @@ Route::post('/news/create', [\App\Http\Controllers\NewsController::class, 'store
 Route::get('/news/{news}', [\App\Http\Controllers\NewsController::class, 'show'])->name('news.show');
 //Route::get('/news/category={category}', [\App\Http\Controllers\NewsController::class, 'categoryNews'])->name('news.index');
 
-
-
 Route::get('/categories', [\App\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [\App\Http\Controllers\CategoryController::class, 'create'])->name('categories.create');
 Route::post('/categories/create', [\App\Http\Controllers\CategoryController::class, 'store'])->name('categories.store');

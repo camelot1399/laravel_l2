@@ -1,4 +1,4 @@
-<nav>
+<nav class="flex flex-nowrap">
     <ul class="navHeader__ul flex flex-wrap ml-5">
         <li class="navHeader__li "><a class="navHeader__a" href="/">Home</a></li>
         <li class="navHeader__li ml-5"><a class="navHeader__a" href="/about">About</a></li>

@@ -19,7 +19,7 @@
         <div class="min-h-screen bg-gray-100">
 {{--            @include('layouts.navigation')--}}
 
-            <nav class="bg-white shadow flex flex-wrap justify-between pt-5 pb-5 pl-20 pr-20">
+            <nav class="bg-white shadow flex flex-nowrap justify-between pt-5 pb-5 pl-20 pr-20">
                 <x-logo-content></x-logo-content>
                 <x-nav-content></x-nav-content>
             </nav>

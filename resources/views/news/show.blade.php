@@ -7,8 +7,10 @@
     <div class="my-8">
         <x-auth-validation-errors :errors="$errors" />
     </div>
-    <p>{{ $news->created_at->format('d.m.Y') }}</p>
+
+    <div class="mb-4 text-gray-500">{{ $news->created_at->format('d.m.Y') }}</div>
     <p>{{ $news->description }}</p>
+
 </x-app-layout>
 
 

@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h1>news</h1>
-        <a href="{{ route('news.create') }}">Create</a>
+        <a class="border-2 border-green-600 text-green-600 text-lg p-1 hover:bg-green-700 hover:text-white" href="{{ route('news.create') }}">Create</a>
     </x-slot>
 
     @if(session()->has('success'))
