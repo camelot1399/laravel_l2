@@ -10,7 +10,13 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        return view('feedback.index');
+        $feedbacks = Feedback::all();
+        return view('feedback.index', compact('feedbacks'));
+    }
+
+    public function create()
+    {
+        return view('feedback.create');
     }
 
     public function store(StoreFeedbackRequest $request)

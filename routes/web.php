@@ -29,8 +29,10 @@ Route::get('/auth', [\App\Http\Controllers\AuthController::class, 'index'])->nam
 Route::get('/adm/create', [\App\Http\Controllers\AdmController::class, 'create'])->name('adm.create');
 Route::post('/adm/create', [\App\Http\Controllers\AdmController::class, 'store'])->name('adm.store');
 
+
 Route::get('/feedback', [\App\Http\Controllers\FeedbackController::class, 'index'])->name('feedback.index');
-Route::post('/feedback', [\App\Http\Controllers\FeedbackController::class, 'store'])->name('feedback.store');
+Route::get('/feedback/create', [\App\Http\Controllers\FeedbackController::class, 'create'])->name('feedback.create');
+Route::post('/feedback/create', [\App\Http\Controllers\FeedbackController::class, 'store'])->name('feedback.store');
 
 Route::get('/order/create', [\App\Http\Controllers\OrderController::class, 'create'])->name('order.create');
 Route::post('/order/create', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
