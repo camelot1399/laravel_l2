@@ -14,7 +14,7 @@ class CreateOrder extends TestCase
      *
      * @return void
      */
-    public function test_create_zakaz()
+    public function test_create_order()
     {
         $user = User::factory()->create();
         $this->actingAs($user);

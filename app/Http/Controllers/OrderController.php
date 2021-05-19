@@ -2,48 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\Orders\CreatingOrderIsNotAvailableNowException;
 use App\Http\Requests\Orders\StoreOrderRequest;
 use App\Models\Order;
-use App\Models\Zakaz;
+use App\Services\OrderService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
+    private OrderService $orderService;
+
+    public function __construct(OrderService $orderService)
+    {
+        $this->orderService = $orderService;
+    }
+
     public function create()
     {
         return view('orders.index');
     }
 
+    /**
+     * @throws \App\Exceptions\Orders\CreatingOrderIsNotAvailableNowException
+     */
     public function store(StoreOrderRequest $request)
     {
-        $html = '';
-        $currentDate = date('l jS \of F Y h:i:s A');
+        \Log::info('Calling store method in the controller');
 
-        $html .= $currentDate . "\n";
-        foreach($request->validated() as $item) {
-            $html .= $item . "\n";
+        try {
+            $this->orderService->create($request->validated());
+        } catch(CreatingOrderIsNotAvailableNowException $e) {
+            return redirect()->back()->with('warning', 'Can new create an order right now :(');
         }
 
-        $path = 'order/order.' . strtotime("now") . '.txt';
-        Storage::disk('public')->put($path, $html);
-
-
-        // записываем в бд: zakaz
-
-//        $data = ['name' => $request->name];
-
-//        $results = DB::insert('INSERT INTO order (name) values (:name)', $data);
-
-//        $data = [
-//            'name' => $request->get('name'),
-//            'phone' => $request->get('phone'),
-//            'email' => $request->get('email'),
-//            'description' => $request->get('description'),
-//        ];
-
-        Order::create($request->validated());
-
-        return redirect()->route('order.create')->with('success', 'Заказ успешно отправлен!');
+        return redirect()->back()->with('success', 'Заказ успешно отправлен!');
     }
 }

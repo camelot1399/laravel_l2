@@ -23,6 +23,7 @@ class StoreOrderRequest extends FormRequest
      */
     public function rules()
     {
+        \Log::info('Validating request');
         return [
             'name' => ['required', 'string', 'max:100'],
             'phone' => ['required', 'int'],
