@@ -67,4 +67,24 @@ class CreateNewsTest extends TestCase
         $response->assertSessionHasErrors(['title']);
 
     }
+
+    public function test_create_and_check_correctWords()
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
+        $category = Category::factory()->create();
+
+        $newsData = [
+            'title' => 'банан',
+            'description' => 'This is description редиска',
+            'category_id' => $category->id
+        ];
+
+        $response = $this->post('/news/create', $newsData);
+
+        $response->assertStatus(302);
+        $response->assertSessionHasErrors(['title']);
+        $response->assertSessionHasErrors(['description']);
+    }
 }
