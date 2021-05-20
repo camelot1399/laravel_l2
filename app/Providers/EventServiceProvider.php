@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\Orders\OrderCreated;
+use App\Listeners\Orders\CreateOrderRecipe;
+use App\Listeners\Orders\SendEmailToCustomer;
+use App\Listeners\Orders\WriteLogToFile;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -17,6 +21,11 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        OrderCreated::class => [
+            CreateOrderRecipe::class,
+            SendEmailToCustomer::class,
+            WriteLogToFile::class
         ],
     ];
 
