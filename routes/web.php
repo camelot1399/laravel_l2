@@ -18,6 +18,11 @@ Route::get('/news', [\App\Http\Controllers\NewsController::class, 'index'])->nam
 Route::get('/news/create', [\App\Http\Controllers\NewsController::class, 'create'])->name('news.create');
 Route::post('/news/create', [\App\Http\Controllers\NewsController::class, 'store'])->name('news.store');
 Route::get('/news/{news}', [\App\Http\Controllers\NewsController::class, 'show'])->name('news.show');
+
+Route::post('/news/update/{news}', [\App\Http\Controllers\NewsController::class, 'update'])->name('news.update');
+Route::post('/news/delete/{news}', [\App\Http\Controllers\NewsController::class, 'delete'])->name('news.delete');
+Route::get('/news/{news}/edit', [\App\Http\Controllers\NewsController::class, 'edit'])->name('news.edit');
+
 //Route::get('/news/category={category}', [\App\Http\Controllers\NewsController::class, 'categoryNews'])->name('news.index');
 
 Route::get('/categories', [\App\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');

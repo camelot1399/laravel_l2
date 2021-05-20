@@ -3,7 +3,10 @@
     <x-slot name="header">
         <h1>Category</h1>
 
-        <a href="{{ route('categories.create') }}">Create</a>
+        <x-button.create>
+            <a href="{{ route('categories.create') }}">Create</a>
+        </x-button.create>
+
     </x-slot>
 
     @if(session()->has('success'))

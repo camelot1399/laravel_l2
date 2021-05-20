@@ -30,7 +30,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="pl-20 pr-20 bg-white shadow pt-10 pb-10">
+            <main class="pl-20 pr-20 bg-white shadow pt-2 pb-2">
                 {{ $slot }}
             </main>
 

@@ -3,7 +3,10 @@
     <x-slot name="header">
         <h1>Отзывы</h1>
 
-        <a class="border-2 border-green-600 text-green-600 text-lg p-1 hover:bg-green-700 hover:text-white" href="{{ route('feedback.create') }}">Оставить отзыв</a>
+        <x-button.create>
+            <a class="" href="{{ route('feedback.create') }}">{{ __('Оставить отзыв') }}</a>
+        </x-button.create>
+
     </x-slot>
 
     <div class="flex justify-between flex-wrap">

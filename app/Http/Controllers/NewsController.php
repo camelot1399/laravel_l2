@@ -19,12 +19,28 @@ class NewsController extends Controller
 
     public function show(News $news)
     {
-//        return response()->json(['1' => '2']);
-//        return response()->file();
-//        return response()
-//            ->view('news.show', compact('news'))
-//            ->header('x-app-type', 'news-page');
         return view('news.show', compact('news'));
+    }
+
+    public function edit(News $news)
+    {
+        $categories = Category::all();
+        return view('news.edit', [
+            'news' => $news,
+            'categories' => $categories
+        ]);
+    }
+
+    public function delete(News $news)
+    {
+        $news->delete($news);
+        return redirect()->route('news.index')->with('success', 'Новость успешно удалена');
+    }
+
+    public function update(News $news, StoreNewsRequest $request)
+    {
+        $news->update($request->validated());
+        return redirect()->route('news.index')->with('success', 'Новость успешно обновлена');
     }
 
     public function categoryNews(Category $category)
