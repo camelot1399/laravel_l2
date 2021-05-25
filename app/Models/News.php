@@ -31,6 +31,8 @@ class News extends Model
 {
     use HasFactory;
 
+    const ROLE_ADMIN = 'admin';
+
     protected $fillable = [
         'title',
         'description',

@@ -1,12 +1,27 @@
-<nav class="flex flex-nowrap">
-    <ul class="navHeader__ul flex flex-wrap ml-5">
-        <li class="navHeader__li "><a class="navHeader__a" href="/">Home</a></li>
-        <li class="navHeader__li ml-5"><a class="navHeader__a" href="/about">About</a></li>
-        <li class="navHeader__li ml-5"><a class="navHeader__a" href="{{ route('news.index') }}">News</a></li>
-        <li class="navHeader__li ml-5"><a class="navHeader__a" href="{{ route('categories.index') }}">Categories list</a></li>
-        <li class="navHeader__li ml-5"><a class="navHeader__a" href="/auth">Auth</a></li>
-        <li class="navHeader__li ml-5"><a class="navHeader__a" href="{{ route('dashboard') }}">Dashboard</a></li>
-        <li class="navHeader__li ml-5"><a class="navHeader__a" href="{{ route('feedback.index') }}">feedback</a></li>
-        <li class="navHeader__li ml-5"><a class="navHeader__a" href="{{ route('order.create') }}">Форма для получения выгрузки данных</a></li>
-    </ul>
-</nav>
+<x-nav-link :href="route('home.index')" :active="request()->routeIs('home.index')">
+    {{ __('Home') }}
+</x-nav-link>
+
+<x-nav-link :href="route('news.index')" :active="request()->routeIs('news.index')">
+    {{ __('News') }}
+</x-nav-link>
+
+<x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
+    {{ __('Categories') }}
+</x-nav-link>
+
+<x-nav-link :href="route('feedback.index')" :active="request()->routeIs('feedback.index')">
+    {{ __('Feedback') }}
+</x-nav-link>
+
+<x-nav-link :href="route('order.create')" :active="request()->routeIs('order.create')">
+    {{ __('Форма для получения выгрузки данных') }}
+</x-nav-link>
+
+<x-nav-link :href="route('about.index')" :active="request()->routeIs('about.index')">
+    {{ __('About') }}
+</x-nav-link>
+
+<x-nav-link :href="route('adminpanel.index')" :active="request()->routeIs('adminpanel.index')">
+    {{ __('AdminPanel') }}
+</x-nav-link>
