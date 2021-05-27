@@ -24,6 +24,8 @@ Route::get('/login', [AuthenticatedSessionController::class, 'create'])
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest');
 
+
+
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->middleware('guest')
                 ->name('password.request');
@@ -62,3 +64,13 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+Route::get('/login/fb/redirect', [\App\Http\Controllers\Auth\FbLoginController::class, 'redirect'])->name('login.fb.redirect');
+Route::get('/auth/login/facebook/callback', [\App\Http\Controllers\Auth\FbLoginController::class, 'callback'])->name('auth.login.facebook.callback');
+
+Route::prefix('/auth')->group(function() {
+    Route::get('/redirect', [\App\Http\Controllers\Auth\VkLoginController::class, 'redirect'])->name('login.vk.redirect');
+    Route::get('/login/vk/callback', [\App\Http\Controllers\Auth\VkLoginController::class, 'callback'])->name('login.vk.callback');
+});
+
+

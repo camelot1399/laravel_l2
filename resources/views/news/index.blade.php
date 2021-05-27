@@ -7,6 +7,10 @@
             <a class="" href="{{ route('news.create') }}">{{ __('Create') }}</a>
         </x-button.create>
 
+        <x-button.create>
+            <a class="" href="{{ route('parser') }}">{{ __('xml parse') }}</a>
+        </x-button.create>
+
     </x-slot>
 
     @if(session()->has('success'))

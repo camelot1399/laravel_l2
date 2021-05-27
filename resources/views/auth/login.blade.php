@@ -52,5 +52,19 @@
                 </x-button>
             </div>
         </form>
+        <!-- OAuth vk -->
+        <div class="mt-4">
+            <x-button class="ml-3">
+                <a href="{{ route('login.vk.redirect') }}">{{ __('Log in vk') }}</a>
+            </x-button>
+        </div>
+
+        <!-- OAuth FB -->
+        <div class="mt-4">
+            <x-button class="ml-3">
+                <a href="{{ route('login.fb.redirect') }}">{{ __('Log in fb') }}</a>
+            </x-button>
+        </div>
+
     </x-auth-card>
 </x-guest-layout>

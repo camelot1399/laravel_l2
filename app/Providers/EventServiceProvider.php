@@ -27,6 +27,10 @@ class EventServiceProvider extends ServiceProvider
             SendEmailToCustomer::class,
             WriteLogToFile::class
         ],
+        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+            // ... other providers
+            'SocialiteProviders\\VKontakte\\VKontakteExtendSocialite@handle',
+        ],
     ];
 
     /**

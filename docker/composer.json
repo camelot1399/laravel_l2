@@ -1,0 +1,5 @@
+{
+    "require": {
+        "orchestra/parser": "^4.0"
+    }
+}

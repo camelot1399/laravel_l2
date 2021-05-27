@@ -55,4 +55,6 @@ Route::prefix('/adminpanel')->group(function() {
 });
 
 
+Route::get('/parser', [\App\Http\Controllers\Admin\ParserController::class, 'index'])->name('parser');
+
 require __DIR__.'/auth.php';
