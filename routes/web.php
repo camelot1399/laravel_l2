@@ -8,7 +8,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-//dd(Session::has('login'));
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about.index');
 
 Route::prefix('/news')->middleware('example:admin')->group(function() {
@@ -52,6 +51,8 @@ Route::prefix('/adminpanel')->group(function() {
     Route::get('/userList/userEdit/{user}', [\App\Http\Controllers\AdminPanel\AdminPanelController::class, 'userEdit'])->name('adminpanel.userEdit');
     Route::post('/userList/userEdit/{user}', [\App\Http\Controllers\AdminPanel\AdminPanelController::class, 'userUpdate'])->name('adminpanel.userUpdate');
     Route::post('/userList/userDelete/{user}', [\App\Http\Controllers\AdminPanel\AdminPanelController::class, 'userDelete'])->name('adminpanel.userDelete');
+    Route::get('/news', [\App\Http\Controllers\AdminPanel\AdminPanelController::class, 'news'])->name('adminpanel.news');
+    Route::get('/news/{news}/edit', [\App\Http\Controllers\AdminPanel\AdminPanelController::class, 'newsEdit'])->name('adminpanel.newsEdit');
 });
 
 

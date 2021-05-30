@@ -57,17 +57,7 @@ class NewsController extends Controller
 
     public function store(StoreNewsRequest $request)
     {
-//        $news = new News();
-//        $news->category_id = $request->get('category_id');
-//        $news->title = $request->get('title');
-//        $news->description = $request->get('description');
-//        $news->save();
-
-//        dump($request->all());
-//        dump($request->validated());
-//
         News::create($request->validated());
-
         return redirect()->route('news.index')->with('success', 'Новость успешно добавлена');
     }
 

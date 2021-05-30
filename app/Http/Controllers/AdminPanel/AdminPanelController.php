@@ -4,6 +4,8 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminPanel\StoreAdminPanelRequest;
+use App\Models\Category;
+use App\Models\News;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -39,5 +41,20 @@ class AdminPanelController extends Controller
     {
         $user->delete($user);
         return redirect()->back()->with('success', 'Пользователь успешно удален');
+    }
+
+    public function news(News $news)
+    {
+        $news = News::with('category')->get();
+        return view('adminpanel.news', compact('news'));
+    }
+
+    public function newsEdit(News $news)
+    {
+        $categories = Category::all();
+        return view('adminpanel.newsEdit', [
+            'news' => $news,
+            'categories' => $categories
+        ]);
     }
 }

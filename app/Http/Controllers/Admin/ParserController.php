@@ -21,29 +21,37 @@ class ParserController extends Controller
             ]
         ]);
 
-        foreach ($data['news'] as $key => $value) {
-            $newsItem = News::whereTitle($value)->first();
+        $titles = array_map(function($news) {
+            return $news['title'];
+        }, $data['news']);
 
-            $categoryNews = Category::whereName('xmlPars')->first();
+        $newsTitles = News::whereIn('title', $titles)->get();
+        $categoryNews = Category::whereName('xmlPars')->first();
 
-            if (!$categoryNews) {
-                $createCategory = Category::create([
-                    'name' => 'xmlPars'
-                ]);
-            }
-
-            $category = Category::whereName('xmlPars')->first();
-
-            if (!$newsItem) {
-                $news = News::create([
-                    'title' => $value['title'],
-                    'description' => $value['description'],
-                    'category_id' => $category->id
-                ]);
-            }
+        if (!$categoryNews) {
+            $categoryNews = Category::create([
+                'name' => 'xmlPars'
+            ]);
         }
 
-        return redirect()->route('news.index');
+        $newsToCreate = [];
+        foreach ($data['news'] as $news) {
+            if($newsTitles->where('title', $news['title'])->isNotEmpty()) {
+                continue;
+            }
+
+            $newsToCreate[] = [
+                'title' => $news['title'],
+                'description' => $news['description'],
+                'category_id' => $categoryNews->id,
+                'created_at' => now()->toDateTimeString(),
+                'updated_at' => now()->toDateTimeString()
+            ];
+        }
+
+        News::insert($newsToCreate);
+
+        return view('dashboard');
 
     }
 }
